@@ -1,0 +1,5 @@
+.python-version
+.vscode
+__pycache__
+/main.py
+/.requirements.txt

@@ -1,0 +1,237 @@
+
+@import url('http://fonts.cdnfonts.com/css/sf-pro-display');
+:root{
+    --msg-color: #e01a1a;
+    --azul: #1877f2;
+    --azulOpaco: #166fe5;
+    --letras: #1c1e21;
+    --fontSZ-cel: 34px;
+}
+
+body{
+    margin: 0;
+    font-family: 'SF Pro Display', Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+h2 { 
+    margin-top: 0;
+    font-family: Helvetica;
+    font-size: 28px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 400; 
+    line-height: 26.4px; 
+    color: var(--letras);
+}
+._95k{
+    padding: 0 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    min-width: 500px;
+    padding: 20px;
+    background: #f0f2f5;
+    height: 100vh;
+}
+
+.main{
+    margin-left: auto;
+    display: inline;
+    width: 450px;
+    height: 150px;
+    line-height: 28px;
+    font-weight: normal;
+    letter-spacing: normal;
+    text-rendering: optimizelegibility;
+}
+.main>img{
+    margin: 0;
+}
+
+.login{
+    margin: auto;
+    padding: 20px 0 28px;
+    width: 396px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+}
+.content {
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    padding: 14px 16px;
+    width: 330px;
+    height: 22px;
+    margin: 10px auto;
+    margin-bottom: 25px;
+    cursor: text;
+}
+.content>input{
+    border: none;
+    background: none;
+    width: 100%;
+    font-size: 17px;
+    outline: none;
+}
+.pass{
+    flex-wrap: wrap;
+    display: flex;
+}
+.pass>div{
+    margin-top: 15px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 17px;
+}
+.pass>i{
+    cursor: pointer;
+    display: none;
+    font-size: 24px;
+}
+
+.content:focus{
+    caret-color: var(--azul);
+}
+.login>form>button{
+    font-family: Helvetica;
+    font-weight: bold;
+    margin: 10px auto 20px auto;
+    color: white;
+    border: none;
+    background-color: var(--azulOpaco);
+    width: 350px;
+    height: 48px;
+    border-radius: 6px;
+    font-size: 20px;
+    line-height: 48px;
+    padding: 0 16px;
+    cursor: pointer;
+    display: inline-block;
+    white-space: nowrap;
+    transition: 200ms cubic-bezier(.08,.52,.52,1) background-color, 200ms cubic-bezier(.08,.52,.52,1) box-shadow, 200ms cubic-bezier(.08,.52,.52,1) transform;
+}
+.login>form>button::before{
+    content: '';
+    display: inline-block;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.separator{
+    margin: 10px auto;
+    width: 340px;
+    height: 90px;
+    border-top: 1px solid #ccc;
+}
+
+.errorLogin{
+    position: absolute;
+    flex-wrap: wrap;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    top: 70px;
+}
+.message{
+    color: var(--msg-color);
+    font-size: 12px;
+}
+.message a{
+    font-weight: bold;
+    color: var(--msg-color);
+    text-decoration: none;
+}
+.preL{
+    display: none;
+}
+.secLoader{
+    justify-content: center;
+    margin: auto;
+    background: #eeebeb;
+    display: none;
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+}
+.preloader {
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    border: 10px solid #c4b7b7;
+    border-top: 10px solid #525151;
+    border-radius: 50%;
+    animation-name: girar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes girar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 1000px) {
+    .main>h2{
+        display: none;
+    }
+    .main>img{
+        width: 480px;
+        height: 140px;
+    }
+    .main{
+        flex-wrap: wrap;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .login{
+        width: 700px;
+        height: 690px;
+    }
+    .login>form>button{
+        font-size: var(--fontSZ-cel);
+        width: 624px;
+        height: 80px;
+    }
+
+    .content{
+        width: 624px;
+        height: 80px;
+    }
+    .pass{
+        margin: 70px auto 60px auto;
+    }
+    .content>input{
+        font-size: var(--fontSZ-cel);
+    }
+
+    .secLoader{
+        left: 0;
+        bottom: calc(15%);
+        width: 400px;
+        height: 400px;
+    }
+    .preloader{
+        width: 200px;
+        height: 200px;
+    }
+}
